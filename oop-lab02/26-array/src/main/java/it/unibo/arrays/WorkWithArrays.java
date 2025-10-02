@@ -47,9 +47,7 @@ class WorkWithArrays {
                 iMax = i;
             }
         }    
-
         return array[iMax];
-        
     }
 
     static int[] sortArray(final int[] array, final boolean isDescending) {
@@ -61,7 +59,17 @@ class WorkWithArrays {
     }
 
     static int[] revertUpTo(final int[] array, final int element) {
-        return null;
+        int[] inverted = new int[array.length];
+        int i = 0;
+        for (; i < inverted.length && array[i] != element; i++);
+        for (int j = 0; j <= i; j++) {
+            inverted[j] = array[i-j];
+        }
+        i++; // ew
+        for (; i < inverted.length; i++) {
+            inverted[i] = array[i];
+        }
+        return inverted;
     }
 
     static int[] duplicateElements(final int[] array, final int times) {
