@@ -16,31 +16,69 @@ class SeqRecognizer {
      * Recognizes: 1{2}3.
      */
     static boolean checkSeq2(final int[] array) {
-        if (array[0] != 1)
+        int i = 0;
+        if (i < array.length && array[i] == 1) { 
+            i++;
+        }
+        else { 
             return false;
-        
-        int i = 1;
+        }
         for (; i < array.length && array[i] == 2; i++);
-        i++;
-        if (array[i] != 3 )
+        if (i < array.length && array[i] == 3) {
+            i++;
+        }
+        else {
             return false;
-        
+        }
         return i == array.length;
-        
     }
 
     /*
      * Recognizes: 1{2}3{4}[5].
      */
     static boolean checkSeq3(final int[] array) {
-        return false;
+        int i = 0;
+        if (i < array.length && array[i] == 1) {
+            i++;
+        }
+        else {
+            return false;
+        }
+        for (; i < array.length && array[i] == 2; i++);
+        if (i < array.length && array[i] == 3) {
+            i++;
+        }
+        else {
+            return false;
+        }
+        for (; i < array.length && array[i] == 4; i++) {
+            i++;
+        }
+        if (i < array.length && array[i] == 5) {
+            i++;
+        }
+
+        return i == array.length;
     }
 
     /*
      * Recognizes: [2|3]{4}5.
      */
     static boolean checkSeq4(final int[] array) {
-        return false;
+        int i = 0;
+        if (i < array.length && (array[i] == 2 || array[i] == 3)) {
+            i++;
+        }
+        for (; i < array.length && array[i] == 4; i++);
+        if (i < array.length && array[i] == 5) {
+            i++;
+        }
+        else {
+            return false;
+        }
+        
+        
+        return i == array.length;
     }
 
     /** Testing methods **/
