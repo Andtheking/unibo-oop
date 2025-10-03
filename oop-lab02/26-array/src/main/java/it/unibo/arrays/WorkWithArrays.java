@@ -51,11 +51,35 @@ class WorkWithArrays {
     }
 
     static int[] sortArray(final int[] array, final boolean isDescending) {
-        return null;
+        int[] sorted = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            sorted[i] = array[i];
+        }
+        for (int i = 0; i < sorted.length - 1; i++) {
+            for (int j = 0; j < sorted.length - i - 1; j++) {
+                if ((isDescending && sorted[j] < sorted[j + 1]) || (!isDescending && sorted[j] > sorted[j + 1])) {
+                    int temp = sorted[j];
+                    sorted[j] = sorted[j + 1];
+                    sorted[j + 1] = temp;
+                }
+            }
+        }
+        return sorted;
     }
 
     static double computeVariance(final int[] array) {
-        return 0;
+        double avg = 0;
+        for (int number : array) {
+            avg += number;
+        }
+        avg /= array.length;
+
+        double variance = 0;
+        for (int number : array) {
+            variance += (number-avg)*(number-avg);
+        }
+        variance /= array.length;
+        return variance;
     }
 
     static int[] revertUpTo(final int[] array, final int element) {
