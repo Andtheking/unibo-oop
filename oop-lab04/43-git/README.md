@@ -100,10 +100,18 @@ andrea@lab22-03-06:~/unibo-oop/oop-lab04/43-git/nuova-directory$ git log --all -
 ok
 ### Si crei un file Mistake.java, con contenuto arbitrario, lo si aggiunga al tracker, e si faccia un commit
 touch Mistake.java
+
+git add .
+
+git commit -m "created Mistake.java"
 ### Si rinomini `Mistake.java` in `ToDelete.java`, e si faccia un commit che registra la modifica
 rename Mistake.java ToDelete.java Mistake.java
+
+git add ToDelete.java
+
 ### Si elimini `ToDelete.java` e si registri la modifica in un commit
 rm ToDelete.java
+
 On branch master
 Changes not staged for commit:
   (use "git add/rm <file>..." to update what will be committed)
