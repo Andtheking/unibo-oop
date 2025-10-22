@@ -5,15 +5,51 @@ si annoti in questo file il comando utilizzato ed il suo output,
 per confrontarlo con le soluzioni.
 
 ### Si crei una nuova directory
-
+mkdir nuova-directory
+cd nuova-directory
 ### Si inizializzi un repository Git dentro la cartella suddetta.
-
+git init
 ### Si osservi lo stato del repository
+git status
+```
+On branch master
 
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)```
 ### Si scriva un file `HelloWorld.java` contenente un `main` con una stampa a video e si osservi il contenuto del repository
+touch HelloWorld.java
+code HelloWorld.java
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+```
+git status
+```
+On branch master
 
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HelloWorld.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
 ### Si aggiunga `HelloWorld.java` allo stage, e si osservi lo stato del repository
+git add HelloWorld.java
+git status
+```
+On branch master
 
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   HelloWorld.java
+```
 ### Si crei il primo commit, con messaggio ragionevole. Se necessario, si configuri nome utente ed email di git usando i dati dell'account istituzionale.
 
 ### Si compili il file Java e si verifichi lo stato del repository
